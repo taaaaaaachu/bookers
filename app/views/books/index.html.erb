@@ -8,21 +8,22 @@
     </tr>
   </thead>
   <% @books.each do |book| %>
-    <tbody>
-      <tr>
-        <td><%= book.title %></td>
-        <td></td>
-      </tr>
-    </tbody>
-
-
-
-  <% end %>
+		<tbody>
+			<tr>
+				<td><%= book.title %></td>
+				<td><%= book.body %></td>
+				<td><%= link_to book.title, book_path(book.id) %></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</tbody>
+	<% end %>
 </table>
+
 
 <h2>New book</h2>
 <!-- form_withにオプション追記 -->
-<%= form_with model: @book, url: '/books', method: :post do |f| %>
+<%= form_with model:@book, local:true do |f| %>
 
   <h4>title</h4>
   <%= f.text_field :title %>
