@@ -99,3 +99,7 @@ a:hover {
 p {
   margin: 33px;
 }
+
+#notice {
+    color: green;
+}
